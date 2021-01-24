@@ -27,7 +27,7 @@ main.addEventListener('click', (event) => {
         document.querySelector('#ans').value = ''
     } else if (event.target.innerHTML === '=') {
         try {
-            let answer = eval(replace(ansValue))
+            let answer = eval(replace(document.querySelector('#ans').value))
             
             if (answer === Infinity) {
                 document.querySelector('#ans').value = 'Math Error'
@@ -38,6 +38,11 @@ main.addEventListener('click', (event) => {
             document.querySelector('#ans').value = 'Syntax Error';
         } 
     } else {
-        document.querySelector('#ans').value += event.target.innerHTML
+        if (document.querySelector('#ans').value === 'Syntax Error' || document.querySelector('#ans').value === 'Math Error') {
+            document.querySelector('#ans').value = ''
+            document.querySelector('#ans').value += event.target.innerHTML
+        } else {
+            document.querySelector('#ans').value += event.target.innerHTML
+        }
     }
 })
