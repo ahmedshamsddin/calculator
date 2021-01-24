@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+/* quick reset so all our padding is the right size */
+* {
+  box-sizing: border-box;
+}
+
+.calculator input,
+.calc-button   {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* add some spacing */
+body {
+  background: #EFC9AF;
+  padding-bottom: 30px;
+  padding-top: 30px;  
+}
+
+/* limit the width and center */
+.calculator   {
+  max-width: 400px;
+  margin: 0 auto;
+  border: 1px solid #111;
+  border-radius: 25px;
+  background-color: #ded9ca;
+}
+
+.calculator input   {
+  /* reset basic form styles */
+  background: #e7fdff;
+  border: none;
+  box-shadow: none;
+  outline: none;
+
+  padding: 20px 10px;
+  width: 100%;
+  border-bottom: 1px solid #111;
+  color: #333;
+  text-align: right;
+  font-size: 40px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.calc-button  {
+  background: #104C91;
+  /*border: 1px solid #111;*/
+  border: none;
+  padding: 15px;
+  color: #EEE;
+  border-radius: 15px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.operator {
+  background: #1F8AC0;
+}
+
+.calculator-buttons {
+  padding: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 15px;
+}
+
+.is-clear   {
+  grid-column: span 3;
+}
+
+.is-zero   {
+  grid-column: span 2;
+}
+
+
+.is-clear   {
+  background: #1F8AC0;
+}
+
+.is-equals {
+  background: #28D060;
+}
