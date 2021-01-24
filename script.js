@@ -20,7 +20,6 @@ const main = document.querySelector('.calculator-buttons');
 
 main.addEventListener('click', (event) => {
     const isButton = event.target.nodeName === 'BUTTON';
-    let ansValue = document.querySelector('#ans').value;
     
     if (!isButton) {
         return;
@@ -31,19 +30,19 @@ main.addEventListener('click', (event) => {
             let answer = eval(replace(ansValue))
             
             if (answer === Infinity) {
-                ansValue = 'Math Error'
+                document.querySelector('#ans').value = 'Math Error'
             } else {
-                ansValue = answer
+                document.querySelector('#ans').value = answer
             }
         } catch (SyntaxError) {
-            ansValue = 'Syntax Error';
+            document.querySelector('#ans').value = 'Syntax Error';
         } 
     } else {
-        if (ansValue === 'Syntax Error' || ansValue === 'Math Error') {
-            ansValue = ''
-            ansValue += event.target.innerHTML
+        if (document.querySelector('#ans').value === 'Syntax Error' || document.querySelector('#ans').value === 'Math Error') {
+            document.querySelector('#ans').value = ''
+            document.querySelector('#ans').value += event.target.innerHTML
         } else {
-            ansValue += event.target.innerHTML
+            document.querySelector('#ans').value += event.target.innerHTML
         }
     }
 })
