@@ -38,11 +38,6 @@ main.addEventListener('click', (event) => {
             document.querySelector('#ans').value = 'Syntax Error';
         } 
     } else {
-        if (document.querySelector('#ans').value === 'Syntax Error' || document.querySelector('#ans').value === 'Math Error') {
-            document.querySelector('#ans').value = ''
-            document.querySelector('#ans').value += event.target.innerHTML
-        } else {
-            document.querySelector('#ans').value += event.target.innerHTML
-        }
+        document.querySelector('#ans').value += event.target.innerHTML
     }
 })
