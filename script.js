@@ -31,6 +31,8 @@ main.addEventListener('click', (event) => {
             
             if (answer === Infinity) {
                 document.querySelector('#ans').value = 'Math Error'
+            } else if (answer === undefined || answer === NaN) {
+                document.querySelector('#ans').value = ''
             } else {
                 document.querySelector('#ans').value = answer
             }
