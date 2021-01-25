@@ -81,3 +81,7 @@ body {
 .is-equals {
   background: #28D060;
 }
+
+button:focus {
+  outline: 0;
+} 
