@@ -16,6 +16,14 @@ function replace (string) {
     return newString
 }
 
+function removeLastCharacter () {
+    if (document.querySelector('#ans').value === 'Syntax Error' || document.querySelector('#ans').value === 'Math Error') {
+        document.querySelector('#ans').value = ''
+    } else {
+        document.querySelector('#ans').value = (document.querySelector('#ans').value).slice(0, -1)
+    }
+}
+
 const main = document.querySelector('.calculator-buttons');
 
 main.addEventListener('click', (event) => {
@@ -39,6 +47,8 @@ main.addEventListener('click', (event) => {
         } catch (SyntaxError) {
             document.querySelector('#ans').value = 'Syntax Error';
         } 
+    } else if (event.target.innerHTML === '<i class="fas fa-backspace"></i>') {
+        removeLastCharacter()        
     } else {
         if (document.querySelector('#ans').value === 'Syntax Error' || document.querySelector('#ans').value === 'Math Error') {
             document.querySelector('#ans').value = ''
